@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import PRODUCTS from "../../API/Apis";
+import products from "../../API/Apis";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,7 +25,7 @@ const User = () => {
     if (check.first || check.second) {
       toast.error("Maydonlarni to'ldiring");
     } else {
-      axios.post(PRODUCTS, send);
+      products.postReuest(send)
       setIsName("");
       setPrice("");
       toast.success("Muoffaqiyatli qo'shilid ");
